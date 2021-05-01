@@ -56,8 +56,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/treagod/spectator/archive/0.5.7.zip",
-          "sha256": "73fd4ff24b604d1eb6888e80f4840a46354db3e7e96beedcaaa1e367823588cd"
+          "url": "https://github.com/treagod/spectator/archive/0.6.0.zip",
+          "sha256": "14f912220b853ac09a80716625741b0d22428f0c73744a0ee15d50959aa514f2"
         }
       ]
     }
