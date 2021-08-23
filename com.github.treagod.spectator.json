@@ -4,7 +4,7 @@
   "base-version": "juno-20.08",
   "runtime": "org.gnome.Platform",
   "sdk": "org.gnome.Sdk",
-  "runtime-version": "3.38",
+  "runtime-version": "40",
   "command": "com.github.treagod.spectator",
   "finish-args": [
     "--socket=wayland",
