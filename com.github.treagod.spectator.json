@@ -1,10 +1,10 @@
 {
   "app-id": "com.github.treagod.spectator",
   "base": "io.elementary.BaseApp",
-  "base-version": "juno-20.08",
+  "base-version": "juno-21.08",
   "runtime": "org.gnome.Platform",
   "sdk": "org.gnome.Sdk",
-  "runtime-version": "40",
+  "runtime-version": "42",
   "command": "com.github.treagod.spectator",
   "finish-args": [
     "--socket=wayland",
@@ -22,14 +22,12 @@
   "modules": [
     {
       "name": "gtksourceview",
-      "config-opts": [
-        "--disable-gtk-doc"
-      ],
+      "buildsystem": "meson",
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.gnome.org/sources/gtksourceview/3.24/gtksourceview-3.24.8.tar.xz",
-          "sha256": "1e9bb8ff190db705deb916dd23ff681f0e8803aec407bf0fd64c7e615ac436fe"
+          "url": "https://download.gnome.org/sources/gtksourceview/4.8/gtksourceview-4.8.3.tar.xz",
+          "sha256": "c30019506320ca2474d834cced1e2217ea533e00eb2a3f4eb7879007940ec682"
         }
       ]
     },
@@ -45,8 +43,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://duktape.org/duktape-2.4.0.tar.xz",
-          "sha256": "86a89307d1633b5cedb2c6e56dc86e92679fc34b05be551722d8cc69ab0771fc"
+          "url": "https://duktape.org/duktape-2.6.0.tar.xz",
+          "sha256": "96f4a05a6c84590e53b18c59bb776aaba80a205afbbd92b82be609ba7fe75fa7"
         }
       ]
     },
@@ -55,9 +53,10 @@
       "buildsystem": "meson",
       "sources": [
         {
-          "type": "archive",
-          "url": "https://github.com/treagod/spectator/archive/0.6.0.zip",
-          "sha256": "14f912220b853ac09a80716625741b0d22428f0c73744a0ee15d50959aa514f2"
+          "type": "git",
+          "url": "https://github.com/treagod/spectator.git",
+          "tag": "0.6.3",
+          "commit": "a7fe1761c4450ea1521b0af200e3a53b5538fab0"
         }
       ]
     }
