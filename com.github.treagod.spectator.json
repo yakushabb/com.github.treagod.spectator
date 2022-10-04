@@ -1,10 +1,10 @@
 {
   "app-id": "com.github.treagod.spectator",
   "base": "io.elementary.BaseApp",
-  "base-version": "juno-21.08",
+  "base-version": "juno-22.08",
   "runtime": "org.gnome.Platform",
   "sdk": "org.gnome.Sdk",
-  "runtime-version": "42",
+  "runtime-version": "44",
   "command": "com.github.treagod.spectator",
   "finish-args": [
     "--socket=wayland",
