@@ -22,17 +22,6 @@
   ],
   "modules": [
     {
-      "name": "gtksourceview",
-      "buildsystem": "meson",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://download.gnome.org/sources/gtksourceview/4.8/gtksourceview-4.8.3.tar.xz",
-          "sha256": "c30019506320ca2474d834cced1e2217ea533e00eb2a3f4eb7879007940ec682"
-        }
-      ]
-    },
-    {
       "name": "duktape",
       "buildsystem": "simple",
       "build-commands": [
