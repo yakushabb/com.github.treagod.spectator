@@ -1,100 +1,100 @@
 {
-  "app-id": "com.github.treagod.spectator",
-  "base": "io.elementary.BaseApp",
-  "base-version": "juno-22.08",
-  "runtime": "org.gnome.Platform",
-  "sdk": "org.gnome.Sdk",
-  "runtime-version": "44",
-  "command": "com.github.treagod.spectator",
-  "finish-args": [
-    "--share=ipc",
-    "--socket=wayland",
-    "--socket=fallback-x11",
-    "--share=network"
-  ],
-  "cleanup": [
-    "/include",
-    "/lib/pkgconfig",
-    "/share/vala",
-    "/man",
-    "*.a",
-    "*.la"
-  ],
-  "modules": [
-    "shared-modules/libsoup/libsoup-2.4.json",
-    {
-        "name": "unifdef",
-        "no-autogen": true,
-        "make-install-args": [
-            "prefix=${FLATPAK_DEST}"
-        ],
-        "sources": [
-            {
-                "type": "archive",
-                "url": "https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz",
-                "sha256": "43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400"
-            }
-        ],
-        "cleanup": [
-            "*"
-        ]
-    },
-    {
-        "name": "webkit2gtk-4.0",
-        "buildsystem": "cmake-ninja",
-        "config-opts": [
-            "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-            "-DPORT=GTK",
-            "-DENABLE_BUBBLEWRAP_SANDBOX=OFF",
-            "-DENABLE_DOCUMENTATION=OFF",
-            "-DUSE_SOUP2=ON",
-            "-DENABLE_MINIBROWSER=OFF",
-            "-DENABLE_WEBDRIVER=OFF",
-            "-DENABLE_GAMEPAD=OFF",
-            "-DUSE_JPEGXL=OFF"
-        ],
-        "sources": [
-            {
-                "type": "archive",
-                "url": "https://webkitgtk.org/releases/webkitgtk-2.42.0.tar.xz",
-                "sha256": "828f95935861fae583fb8f2ae58cf64c63c178ae2b7c2d6f73070813ad64ed1b",
-                "x-checker-data": {
-                    "type": "html",
-                    "url": "https://webkitgtk.org/releases/",
-                    "version-pattern": "LATEST-STABLE-(\\d[\\.\\d]+\\d)",
-                    "url-template": "https://webkitgtk.org/releases/webkitgtk-$version.tar.xz"
+    "app-id": "com.github.treagod.spectator",
+    "base": "io.elementary.BaseApp",
+    "base-version": "juno-22.08",
+    "runtime": "org.gnome.Platform",
+    "sdk": "org.gnome.Sdk",
+    "runtime-version": "44",
+    "command": "com.github.treagod.spectator",
+    "finish-args": [
+        "--share=ipc",
+        "--socket=wayland",
+        "--socket=fallback-x11",
+        "--share=network"
+    ],
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/vala",
+        "/man",
+        "*.a",
+        "*.la"
+    ],
+    "modules": [
+        "shared-modules/libsoup/libsoup-2.4.json",
+        {
+            "name": "unifdef",
+            "no-autogen": true,
+            "make-install-args": [
+                "prefix=${FLATPAK_DEST}"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz",
+                    "sha256": "43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400"
                 }
-            }
-        ]
-    },
-    {
-      "name": "duktape",
-      "buildsystem": "simple",
-      "build-commands": [
-        "mv Makefile.sharedlibrary Makefile",
-        "sed 's#INSTALL_PREFIX = /usr/local#INSTALL_PREFIX = /app#g' -i Makefile",
-        "CFLAGS='$CFLAGS -D DUK_USE_FASTINT -w' INSTALL_PREFIX=/app make",
-        "CFLAGS='$CFLAGS -D DUK_USE_FASTINT -w' INSTALL_PREFIX=/app make install"
-      ],
-      "sources": [
+            ],
+            "cleanup": [
+                "*"
+            ]
+        },
         {
-          "type": "archive",
-          "url": "https://duktape.org/duktape-2.6.0.tar.xz",
-          "sha256": "96f4a05a6c84590e53b18c59bb776aaba80a205afbbd92b82be609ba7fe75fa7"
-        }
-      ]
-    },
-    {
-      "name": "spectator",
-      "buildsystem": "meson",
-      "sources": [
+            "name": "webkit2gtk-4.0",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DPORT=GTK",
+                "-DENABLE_BUBBLEWRAP_SANDBOX=OFF",
+                "-DENABLE_DOCUMENTATION=OFF",
+                "-DUSE_SOUP2=ON",
+                "-DENABLE_MINIBROWSER=OFF",
+                "-DENABLE_WEBDRIVER=OFF",
+                "-DENABLE_GAMEPAD=OFF",
+                "-DUSE_JPEGXL=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.42.1.tar.xz",
+                    "sha256": "6f41fac9989d3ee51c08c48de1d439cdeddecbc757e34b6180987d99b16d2499",
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "https://webkitgtk.org/releases/",
+                        "version-pattern": "LATEST-STABLE-(\\d[\\.\\d]+\\d)",
+                        "url-template": "https://webkitgtk.org/releases/webkitgtk-$version.tar.xz"
+                    }
+                }
+            ]
+        },
         {
-          "type": "git",
-          "url": "https://github.com/treagod/spectator.git",
-          "tag": "0.6.3",
-          "commit": "a7fe1761c4450ea1521b0af200e3a53b5538fab0"
+            "name": "duktape",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mv Makefile.sharedlibrary Makefile",
+                "sed 's#INSTALL_PREFIX = /usr/local#INSTALL_PREFIX = /app#g' -i Makefile",
+                "CFLAGS='$CFLAGS -D DUK_USE_FASTINT -w' INSTALL_PREFIX=/app make",
+                "CFLAGS='$CFLAGS -D DUK_USE_FASTINT -w' INSTALL_PREFIX=/app make install"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://duktape.org/duktape-2.6.0.tar.xz",
+                    "sha256": "96f4a05a6c84590e53b18c59bb776aaba80a205afbbd92b82be609ba7fe75fa7"
+                }
+            ]
+        },
+        {
+            "name": "spectator",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/treagod/spectator.git",
+                    "tag": "0.6.3",
+                    "commit": "a7fe1761c4450ea1521b0af200e3a53b5538fab0"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
