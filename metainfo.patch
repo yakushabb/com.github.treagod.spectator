@@ -1,0 +1,12 @@
+diff --git a/data/com.github.treagod.spectator.appdata.xml.in b/data/com.github.treagod.spectator.appdata.xml.in
+index dd66eed..8d125a0 100644
+--- a/data/com.github.treagod.spectator.appdata.xml.in
++++ b/data/com.github.treagod.spectator.appdata.xml.in
+@@ -6,6 +6,7 @@
+   <project_license>GPL-3.0+</project_license>
+   <name>Spectator</name>
+   <summary>Comfortably test your REST APIs!</summary>
++  <launchable type="desktop-id">com.github.treagod.spectator.desktop</launchable>
+   <description>
+     <p>Gives you the possibilty to test your REST application.</p>
+     <p>
