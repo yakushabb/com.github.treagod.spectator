@@ -95,6 +95,10 @@
                     "url": "https://github.com/treagod/spectator.git",
                     "tag": "0.6.3",
                     "commit": "a7fe1761c4450ea1521b0af200e3a53b5538fab0"
+                },
+                {
+                    "type": "patch",
+                    "path": "metainfo.patch"
                 }
             ]
         }
